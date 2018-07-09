@@ -4,10 +4,10 @@ import datetime
 import threading
 import time
 
-instance_id = "i-0380596e10d91fb42"
-CVM_IP = "18.130.59.250"
-Region = "eu-west-2"
-SecretKey = "9Z1vn11Buts9vS9y+0hWfxCNyWvyUrcREtCQsPkG"
-AccessKey = "AKIAJ3ELMVYRLCJQGHRQ"
+instance_id = "<Guest VM instance id>"
+CVM_IP = "<Control VM public ip>"
+Region = "<Specify your Region>"
+SecretKey = "<AWS Secret Key>"
+AccessKey = "<AWS AccessKey>"
 
 
