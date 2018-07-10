@@ -1,10 +1,13 @@
 #Author-Sulom Tulshibagwale
 #Created On- Jul 09 12:50 IST 2018
-
+import sys
 import requests
 import json
 import datetime
-from framework.config import *
+#from framework.config import *
+
+sys.path.append('/home/sulom/Documents/Automation/Automation/framework/')
+from config import *
 
 Snapshot_ID = ""
 volId_List=[]
@@ -117,10 +120,11 @@ def disk_open(instance_id, snapshot_id, volume_iD):
     #print "Response................."
     #print resp
     #print (resp['Device'])
-    volume_disk[volume_iD] = resp['Device']
-
-
-
+    if response.status_code == 200:
+        global volume_disk
+        volume_disk[volume_iD] = resp['Device']
+    else:
+        print("Volume not attached")
 
 
 
@@ -142,4 +146,4 @@ def d_open(instance_id, Snapshot_ID, volId_List):
         # Start new Threads
         thread.join()
     print ("Fetching List of Volumes and the device where the volume made from the Snapshot is attached")
-    print (volume_disk)
+    return  volume_disk

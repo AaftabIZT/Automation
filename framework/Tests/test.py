@@ -1,5 +1,9 @@
-from framework.Libraries_Pkg.Func import *
-from framework.config import *
+#! /usr/bin/python3
+#from framework.Libraries_Pkg.Func import *
+#from framework.config import *
+import sys
+sys.path.append('/home/sulom/Documents/Automation/Automation/framework/Libraries_Pkg/')
+from Func import *
 
 
 SnapId=""
@@ -21,14 +25,14 @@ def test_CreateSnapShot1():
     print ("Snapshpt Id:"+str(SnapId))
 
 
-#test_ListExhistingSanpshots()
+test_ListExhistingSanpshots()
 
 print ("****************************************************Creating   Snapshot****************************************************")
-test_CreateSnapShot1()
+#test_CreateSnapShot1()
 print ("****************************************************Create Snapshot End****************************************************")
 
 
 print ("****************************************************Attaching Volumes****************************************************")
-d_open(instance_id, SnapId, volIds)
+#d_open(instance_id, SnapId, volIds)
 print ("****************************************************Attached Volumes****************************************************")
 
