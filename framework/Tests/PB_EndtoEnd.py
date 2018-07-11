@@ -41,7 +41,7 @@ Snapshot_Name="Test_False_Automation"
 Cutover_Flag=False
 url = base_url + instance_id + "/snapshots"
 SnapId_F, volIds_F = create_snap_func(url, Snapshot_Name, Cutover_Flag)
-print("Snapshot created for the following volumes:\n", volIds)
+print("Snapshot created for the following volumes:\n", volIds_F)
 print("Snapshpt Id:" + str(SnapId))
 
 print ("****************************************************Create Snapshot End****************************************************")
@@ -83,7 +83,7 @@ Snapshot_Name="Test_True_Automation"
 Cutover_Flag=True
 url = base_url + instance_id + "/snapshots"
 SnapId_T, volIds_T = create_snap_func(url, Snapshot_Name, Cutover_Flag)
-print("Snapshot created for the following volumes:\n", volIds)
+print("Snapshot created for the following volumes:\n", volIds_T)
 print("Snapshpt Id:" + str(SnapId))
 
 print ("****************************************************Create Snapshot End****************************************************")
@@ -107,8 +107,10 @@ sshcon.connect(hostname, username=myuser, key_filename=mySSHK)'''
 
 for vol in volIds_F:
     full = disks_full[vol]
-    #incr = disks_incr[vol]
-    print(full)
+    incr = disks_incr[vol]
+    print("Full Disk for vol:",vol,full)
+    print("Incr Disk for vol:", vol, incr)
+
 #List files on home to enshure ssh connection
 #stdin, stdout, stderr = sshcon.exec_command("ls -l ")
 #print (stdout.read())
