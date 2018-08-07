@@ -1,14 +1,14 @@
 #Author-Sulom Tulshibagwale
 #Created On- Jul 10 12:59 IST 2018
 
-from framework.Libraries_Pkg.Func import *
-from framework.config import *
 from libcloud.compute.types import Provider
 from libcloud.compute.providers import get_driver
 from libcloud.compute.drivers import ec2
 import sys
 import paramiko
 
+sys.path.append('../Libraries_Pkg')
+from functions import *
 
 BASE_DRIVER = get_driver(Provider.EC2)
 EC2_DRIVER = BASE_DRIVER(AccessKey_, \
